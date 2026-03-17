@@ -1,6 +1,6 @@
 ## Downloading Testset
 ### Blurry images and Raw events
-Testset input: 
+Testset input:
 [CodaLab_downloading_link](https://codalab.lisn.upsaclay.fr/my/datasets/download/3ed362b8-9084-414d-a5f3-d906708773cf); [Kaggle_downloading_link](https://www.kaggle.com/datasets/lei0331/highrev-testset)
 
 The structure of the HighREV dataset with raw events is as following:
@@ -24,7 +24,7 @@ By using `./basicsr/utils/npz2voxel.py` you can convert raw events to voxel grid
 
 ```
 git clone https://github.com/NikonD850/NTIRE26_event_deblur.git
-cd NTIRE2026_event_deblur
+cd NTIRE26_event_deblur
 
 conda create -n iscas python=3.10 -y
 conda activate iscas
@@ -36,7 +36,13 @@ python -m pip install . --no-build-isolation
 cd ..
 
 pip install -r requirements.txt
-python setup.py develop --no_cuda_ext
+
+# Recommended editable install for modern pip/setuptools.
+# Optional CUDA ops are skipped automatically when their sources are unavailable.
+pip install -e .
+
+# Legacy fallback:
+# python setup.py develop --no_cuda_ext
 ```
 
 ## How to start testing?
