@@ -1,0 +1,10 @@
+__pychache__/
+*.pyc
+experiments/
+.DS_Store
+.eggs/
+.DS_Store
+results/
+*egg-info/
+model_zoo/net_g_80000.pth
+model_zoo/net_g_200000.pth
