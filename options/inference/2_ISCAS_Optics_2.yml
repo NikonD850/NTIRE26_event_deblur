@@ -1,0 +1,55 @@
+name: 2_ISCAS_Optics_2_net_g_80000_tta_all8
+model_type: TestAllPatchRotateFlipExtendedImageEventRestorationModel
+scale: 1
+num_gpu: 1
+manual_seed: 10
+print_flops: true
+flops_input_shape:
+  - [3, 256, 256]
+  - [21, 256, 256]
+
+datasets:
+  test:
+    name: highrev-test
+    type: VoxelnpzPngSingleDeblurDataset
+    dataroot: /home/fdw/data/HighREV_test
+    dataroot_voxel: /data/HighREV_test/voxel21
+    gt_size: ~
+    norm_voxel: true
+    io_backend:
+      type: disk
+    use_hflip: false
+    use_rot: false
+    phase: test
+    scale: 1
+
+dataset_name: HighREV
+
+network_g:
+  type: TFM4488_27DF_28SCF_18CMF
+  inChannels_event: 21
+
+path:
+  pretrain_network_g: model_zoo/2_ISCAS_Optics_2.pth
+  strict_load_g: true
+  resume_state: ~
+  root: .
+
+val:
+  save_img: true
+  grids: ~
+  crop_size: ~
+  max_minibatch: 8
+  save_gt: false
+  rgb2bgr: true
+  four_patch_size:
+    - 576
+    - 576
+  four_patch_stride:
+    - 288
+    - 288
+  tta_mode: all8
+
+dist_params:
+  backend: nccl
+  port: 29500
