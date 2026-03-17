@@ -10,8 +10,8 @@ import cv2
 import numpy as np
 
 
-DEFAULT_ROOT1 = "results/TFM4222_27DF_28SCF_18CMF_0204_4patch_test_net_g_625000_0.5_500000_0.5"
-DEFAULT_ROOT2 = "results/TFM4222_27DF_28SCF_18CMF_0204_4patch_test_net_g_625000_0.8_500000_0.2"
+DEFAULT_ROOT1 = "results/2_ISCAS_Optics_1_net_g_200000_tta_all8"
+DEFAULT_ROOT2 = "results/2_ISCAS_Optics_1_net_g_80000_tta_all8"
 DEFAULT_SUBDIR = "visualization/highrev-test"
 DEFAULT_NUM_WORKERS = min(64, max(1, (os.cpu_count() or 1) * 2))
 
@@ -27,8 +27,8 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_SUBDIR,
         help="Relative image folder under each root, e.g. visualization/highrev-test.",
     )
-    parser.add_argument("--w1", type=float, default=0.8, help="Weight for root1.")
-    parser.add_argument("--w2", type=float, default=0.2, help="Weight for root2.")
+    parser.add_argument("--w1", type=float, default=0.5, help="Weight for root1.")
+    parser.add_argument("--w2", type=float, default=0.5, help="Weight for root2.")
     parser.add_argument(
         "--output-root",
         default="",
