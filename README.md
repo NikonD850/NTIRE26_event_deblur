@@ -19,9 +19,6 @@ The structure of the HighREV dataset with raw events is as following:
 For each blurry image, there are several NPZ files containing events. By concatenating them, the events for the entire exposure time can be obtained. More details please refer to `./basicsr/data/npz_image_dataset.py`
 
 
-### Converting events to voxel
-By using `./basicsr/utils/npz2voxel.py` you can convert raw events to voxel grids by you own offline.
-
 ```
 git clone https://github.com/NikonD850/NTIRE26_event_deblur.git
 cd NTIRE26_event_deblur
@@ -43,6 +40,11 @@ pip install -e .
 
 # Legacy fallback:
 # python setup.py develop --no_cuda_ext
+```
+
+## Prepare event voxel
+```
+bash scripts/ISCAS_Optics_build_voxel21_test.sh # Change your root of data in .sh
 ```
 
 ## How to start testing?
