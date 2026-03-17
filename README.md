@@ -33,6 +33,7 @@ python -m pip install . --no-build-isolation
 cd ..
 
 pip install -r requirements.txt
+pip install timm
 
 # Recommended editable install for modern pip/setuptools.
 # Optional CUDA ops are skipped automatically when their sources are unavailable.
