@@ -53,29 +53,17 @@ cd 'your data root'
 cp -r blur sharp
 ```
 
-## How to start testing?
-Example:
+## Inference
 ```
-python -m torch.distributed.launch --nproc_per_node=1 --master_port=4321 basicsr/test.py -opt options/inference/ --launcher pytorch
+cd NTIRE26_event_deblur
+python -m torch.distributed.launch --nproc_per_node=1 --master_port=4321 basicsr/test.py -opt options/inference/2_ISCAS_Optics_1.yml --launcher pytorch
+python -m torch.distributed.launch --nproc_per_node=1 --master_port=1234 basicsr/test.py -opt options/inference/2_ISCAS_Optics_2.yml --launcher pytorch
 ```
 
-## Citations
-
+## Merge result
 ```
-@inproceedings{sun2023event,
-  title={Event-based frame interpolation with ad-hoc deblurring},
-  author={Sun, Lei and Sakaridis, Christos and Liang, Jingyun and Sun, Peng and Cao, Jiezhang and Zhang, Kai and Jiang, Qi and Wang, Kaiwei and Van Gool, Luc},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={18043--18052},
-  year={2023}
-}
-
-@inproceedings{sun2022event,
-  title={Event-Based Fusion for Motion Deblurring with Cross-modal Attention},
-  author={Sun, Lei and Sakaridis, Christos and Liang, Jingyun and Jiang, Qi and Yang, Kailun and Sun, Peng and Ye, Yaozu and Wang, Kaiwei and Gool, Luc Van},
-  booktitle={European Conference on Computer Vision},
-  pages={412--428},
-  year={2022},
-  organization={Springer}
-}
+python scripts/fuse_png_from_two_roots.py
 ```
+Then you can find your result in results/2_ISCAS_Optics_1_net_g_200000_tta_all8_0.5_2_ISCAS_Optics_1_net_g_80000_tta_all8_0.5
+## Acknowledge
+This repo is based on [EVSSM](https://github.com/kkkls/EVSSM) [ADHINet](https://github.com/wyang-vis/AHDINet) and [challenge official repo](https://github.com/AHupuJR/NTIRE2025_EventDeblur_challenge).
