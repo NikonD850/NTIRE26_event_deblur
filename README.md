@@ -42,9 +42,14 @@ pip install -e .
 # python setup.py develop --no_cuda_ext
 ```
 
-## Prepare event voxel
+## Prepare test data
 ```
+# Create 21 channel voxel
 bash scripts/ISCAS_Optics_build_voxel21_test.sh # Change your root of data in .sh
+
+# Copy blur to sharp
+cd 'your data root'
+cp -r blur sharp
 ```
 
 ## How to start testing?
