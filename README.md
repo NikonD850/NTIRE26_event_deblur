@@ -67,6 +67,6 @@ python -m torch.distributed.launch --nproc_per_node=1 --master_port=1234 basicsr
 ```
 python scripts/fuse_png_from_two_roots.py
 ```
-Then final result can be found at `results/2_ISCAS_Optics_1_net_g_200000_tta_all8_0.5_2_ISCAS_Optics_1_net_g_80000_tta_all8_0.5`
+Then final result can be found at `results/2_ISCAS_Optics_1_net_g_200000_tta_all8_0.5_2_ISCAS_Optics_2_net_g_80000_tta_all8_0.5`
 ## Acknowledge
 This repo is based on [EVSSM](https://github.com/kkkls/EVSSM) [ADHINet](https://github.com/wyang-vis/AHDINet) and [challenge official repo](https://github.com/AHupuJR/NTIRE2025_EventDeblur_challenge).
