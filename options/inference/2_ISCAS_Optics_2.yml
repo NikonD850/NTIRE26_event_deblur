@@ -13,7 +13,7 @@ datasets:
     name: highrev-test
     type: VoxelnpzPngSingleDeblurDataset
     dataroot: /home/fdw/data/HighREV_test
-    dataroot_voxel: /data/HighREV_test/voxel21
+    dataroot_voxel: /home/fdw/data/HighREV_test/voxel21
     gt_size: ~
     norm_voxel: true
     io_backend:
