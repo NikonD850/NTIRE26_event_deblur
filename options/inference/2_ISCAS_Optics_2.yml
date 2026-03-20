@@ -1,5 +1,5 @@
 name: 2_ISCAS_Optics_2_net_g_80000_tta_all8
-model_type: TestAllPatchRotateFlipExtendedImageEventRestorationModel
+model_type: ISCASOpticsModel
 scale: 1
 num_gpu: 1
 manual_seed: 10
