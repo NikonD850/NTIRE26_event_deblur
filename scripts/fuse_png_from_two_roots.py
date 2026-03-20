@@ -11,7 +11,7 @@ import numpy as np
 
 
 DEFAULT_ROOT1 = "results/2_ISCAS_Optics_1_net_g_200000_tta_all8"
-DEFAULT_ROOT2 = "results/2_ISCAS_Optics_1_net_g_80000_tta_all8"
+DEFAULT_ROOT2 = "results/2_ISCAS_Optics_2_net_g_80000_tta_all8"
 DEFAULT_SUBDIR = "visualization/highrev-test"
 DEFAULT_NUM_WORKERS = min(64, max(1, (os.cpu_count() or 1) * 2))
 
